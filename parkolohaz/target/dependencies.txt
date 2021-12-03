@@ -1,0 +1,8 @@
+digraph "com.innovator:parkolohaz:war:1.0-SNAPSHOT" { 
+	"com.innovator:parkolohaz:war:1.0-SNAPSHOT" -> "javax.servlet:javax.servlet-api:jar:3.1.0:provided" ; 
+	"com.innovator:parkolohaz:war:1.0-SNAPSHOT" -> "javax.servlet.jsp:javax.servlet.jsp-api:jar:2.3.1:provided" ; 
+	"com.innovator:parkolohaz:war:1.0-SNAPSHOT" -> "org.glassfish.web:javax.servlet.jsp.jstl:jar:1.2.4:compile" ; 
+	"com.innovator:parkolohaz:war:1.0-SNAPSHOT" -> "mysql:mysql-connector-java:jar:8.0.27:compile" ; 
+	"org.glassfish.web:javax.servlet.jsp.jstl:jar:1.2.4:compile" -> "javax.servlet.jsp.jstl:jstl-api:jar:1.2:compile" ; 
+	"mysql:mysql-connector-java:jar:8.0.27:compile" -> "com.google.protobuf:protobuf-java:jar:3.11.4:compile" ; 
+ } 
