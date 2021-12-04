@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ page import="com.luv2code.jsp.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Home</title>
+	<title>ParkHub - Főoldal</title>
 </head>
 <body>
-	<h1>ParkolóHáz</h1>
+	<h1>ParkHub</h1>
 	
 	
 	
@@ -32,7 +32,11 @@
     	 if(oke == 1){ %>
 			//Bejelentkezett oldal
 		<a href="kijelentkezes.jsp">Kijelentkezés</a>
-		<%}else{ %>
+		<%}else{ 
+			
+			
+			%>
+			
 			<a href="login.html">Bejelentkezés</a>
 			<br>
 			<a href="register.html">Regisztráció</a>

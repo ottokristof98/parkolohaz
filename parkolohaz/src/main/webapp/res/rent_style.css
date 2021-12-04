@@ -1,0 +1,85 @@
+body
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: #A4CCDE;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    color: #fff;
+}
+header li, a, button {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background: #24252a;
+}
+header img {
+    margin-right: auto;
+    cursor: pointer;
+    width: 200px;
+}
+.navlinks {
+    list-style: none;
+}
+.navlinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+.navlinks li a{
+    transition: all 0.3s ease 0s;
+}
+.navlinks li a:hover{
+    color:#4588A6;
+}
+button {
+    padding: 9px 25px;
+    background-color: #4588A6;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+.kitolto
+{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.kitolto form
+{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin-left: 30%;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.kitolto p
+{
+    color: rgba(0,0,0, 0.8);
+}
+.kitolto input[type=text], .kitolto select
+{
+    width: 60%;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.rentnow button
+{
+    text-align: left;
+    background-color: #2ECC71;
+}
+button:hover {
+    background-color: rgba(29, 131, 72, 0.8);

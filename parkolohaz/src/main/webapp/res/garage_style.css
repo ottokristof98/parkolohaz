@@ -1,0 +1,134 @@
+body
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: #A4CCDE;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    color: #fff;
+}
+header li, a, button {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background: #24252a;
+}
+header img {
+    margin-right: auto;
+    cursor: pointer;
+    width: 200px;
+}
+.navlinks {
+    list-style: none;
+}
+.navlinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+.navlinks li a{
+    transition: all 0.3s ease 0s;
+}
+.navlinks li a:hover{
+    color:#4588A6;
+}
+button {
+    padding: 9px 25px;
+    background-color: #4588A6;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+.block1 form, .block2 form
+{
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    width: 550px;
+    height: 480px;
+    line-height: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.blocks
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.blocks h3
+{
+    padding-top: 10px;
+}
+.kepdiv {
+    padding-top: 50px;
+    position: relative;
+}
+
+.kepimg {
+    width: 400px;
+    height: 300px;
+}
+
+.kepoverlay {
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 400px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+    margin-left: 75px;
+}
+
+.kepoverlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+.kepoverlay {
+    background: rgba(69, 136, 166, 0.7);
+}
+
+.kepoverlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.kepoverlay:hover {
+    opacity: 1;
+}
+
+.kepoverlay:hover > * {
+    transform: translateY(0);
+}
+
+.leiras1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.leiras2 {
+    font-size: 1.25em;
+    margin-top: 0.25em;
+}
