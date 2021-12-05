@@ -122,7 +122,7 @@ public class FunUtils{
         if(e == 0){
             if(nev.length() < 5 || email. length() < 5 || lakcim.length() < 5 || szuletes.length() < 5 || telefon.length() != 9 || jelszo1.length() < 5 || !jelszo1.equals(jelszo2)){
                 
-                if(jelszo1.equals(jelszo2)){ v = "0Nem egyezik a két jelszó (" + jelszo1 + ") (" + jelszo2 + ")";}
+                if(jelszo1.equals(jelszo2)){ v = "Nem egyezik a két jelszó";}
                 else{ v = "Nins kitöltve rendesen az összes mező..";}
             }else{
                 //update
