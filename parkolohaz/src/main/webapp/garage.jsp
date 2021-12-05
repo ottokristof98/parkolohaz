@@ -37,9 +37,8 @@
     <div class="blocks">
         <%
         int parkolo = com.luv2code.jsp.FunUtils.Parkolo("","").size();
-        for(int i=0;i<parkolo; i++){
-            out.println(Integer.parseInt(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[0]) + " " + parkolo);
-        }
+        
+        
         if(parkolo > 0){
         for (int i = 0; i < parkolo; i++) {
         int idparkolo = Integer.parseInt(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[0]);

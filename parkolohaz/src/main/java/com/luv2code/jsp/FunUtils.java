@@ -42,7 +42,7 @@ public class FunUtils{
     public static List<String[]> Parkolo(String mit, String mi) throws SQLException, ClassNotFoundException, IOException{
         Connection con = get_data();
         Statement stmt = con.createStatement();
-        List<String[]> eredmeny = new ArrayList<String[]>();
+        ArrayList<String[]> eredmeny = new ArrayList<String[]>();
         String[] tomb = new String[7];
         int nem = 0;
         ResultSet rs1 = stmt.executeQuery("SELECT * FROM parkolo;");

@@ -48,7 +48,13 @@
 			<div class="indexgomb"><a href="register.jsp">Regisztráció</a></div>
 			</div>
 		<% }
-		
+		int parkolo = com.luv2code.jsp.FunUtils.Parkolo("","").size();
+        
+        
+        
+        for (int i = 0; i < parkolo; i++) {
+			int idparkolo = Integer.parseInt(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[0]);
+		}
 		%>
 		
 		
