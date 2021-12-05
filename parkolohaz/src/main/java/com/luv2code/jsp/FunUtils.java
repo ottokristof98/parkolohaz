@@ -127,7 +127,7 @@ public class FunUtils{
                 Statement stmt = con.createStatement();
                 LocalDate d = LocalDate.parse(szuletes);
                 
-                int w = stmt.executeUpdate("INSERT INTO felhasznalo " + "(nev, email, jelszo, lakcim, szuletes, telefon) " + "VALUES ('"+nev+"', '"+email+"', '"+jelszo1+"', '"+lakcim+"', '"+d+"', '"+telefon+"')");
+                int w = stmt.executeUpdate("INSERT INTO felhasznalo " + "(nev, email, jelszo, lakcim, szuletes, telefonszam) " + "VALUES ('"+nev+"', '"+email+"', '"+jelszo1+"', '"+lakcim+"', '"+d+"', '"+telefon+"');");
                 if(w == 0) v = "Sikertelen regisztráció!";
                 else v = "Sikeres regisztráció!";
             } 
