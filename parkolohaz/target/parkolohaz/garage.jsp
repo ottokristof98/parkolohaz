@@ -8,6 +8,19 @@
     <%@ page import="com.luv2code.jsp.*" %>
 </head>
 <body>
+<% 
+		Cookie[] cookies = request.getCookies();
+		Cookie cookie = null;
+		int oke = 0;
+		if (cookies != null) {
+			for (int i = 0; i < cookies.length; i++) {
+				if(cookies[i].getName().equals("email") && cookies[i].getValue() != ""){
+					oke = 1;
+					
+				}
+			}
+		}
+    	 if(oke == 1){%>
     <header>
         <img src="res/parkhub.png">
         <a class="foglalas" href="#"><button><a href="rent.html">Foglalás</a></button></a>
@@ -24,6 +37,9 @@
     <div class="blocks">
         <%
         int parkolo = com.luv2code.jsp.FunUtils.Parkolo("","").size();
+        for(int i=0;i<parkolo; i++){
+            out.println(Integer.parseInt(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[0]) + " " + parkolo);
+        }
         if(parkolo > 0){
         for (int i = 0; i < parkolo; i++) {
         int idparkolo = Integer.parseInt(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[0]);
@@ -51,7 +67,16 @@
                 <a href="/rent.jsp" class="pl1" href="#"><button>Foglalás</button></a>
             </form>
         </div>
-        <% }} %>
+        <% }}else{
+            out.println("Jelenleg nincs egy parkoló sem.");
+        } %>
     </div>
+    <%}else{ %>
+    <script>
+                        setTimeout(function() {
+                            document.location = "index.jsp";
+                        }, 1000);
+                      </script>
+   <% } %>
 </body>
 </html>

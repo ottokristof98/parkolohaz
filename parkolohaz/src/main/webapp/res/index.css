@@ -1,0 +1,41 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background: #A4CCDE;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.kep{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background: #24252a;
+    height: 50px;
+}
+.kep img{
+    margin-right: auto;
+    height: 50px;
+
+}
+.indexgomb{
+    
+    width: 100px;
+    padding: 50px;
+    margin: 50px;
+    background-color: darkslategray;
+    color: whitesmoke;
+    display: inline-block;
+    border: 1px solid black;
+}
+.indexgomb a{
+    text-decoration: none;
+    color: white;
+}
+.doboz{
+    margin: auto;
+    width: 50%;
+}

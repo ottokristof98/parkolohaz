@@ -7,11 +7,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ParkHub - Főoldal</title>
+	<link rel="stylesheet" href="res/index.css">
+	<link rel="stylesheet" href="res/garage_style.css">
 </head>
 <body>
-	<h1>ParkHub</h1>
-	
-	
 	
 	<% 
 		Cookie[] cookies = request.getCookies();
@@ -26,16 +25,28 @@
 			}
 		}
     	 if(oke == 1){ %>
-			//Bejelentkezett oldal
-		<a href="kijelentkezes.jsp">Kijelentkezés</a>
+			 <header>
+        <img src="res/parkhub.png">
+        <a class="foglalas" href="#"><button><a href="rent.jsp">Foglalás</a></button></a>
+        <nav>
+            <ul class="navlinks">
+                <li><a href="garage.jsp">Garázs</a></li>
+                <li><a href="tortenet.jsp">Történet</a></li>
+                <li><a href="kijelentkezes.jsp">Kijelentkezés</a></li>
+            </ul>
+        </nav>
+        
+    </header>
 		<%}else{ 
 			
 			
 			%>
-			
-			<a href="login.html">Bejelentkezés</a>
-			<br>
-			<a href="register.html">Regisztráció</a>
+			<div class="kep"><img src="res/parkhub.png"></div>
+			<div class="doboz">
+			<div class="indexgomb"><a href="login.jsp">Bejelentkezés</a></div>
+		
+			<div class="indexgomb"><a href="register.jsp">Regisztráció</a></div>
+			</div>
 		<% }
 		
 		%>

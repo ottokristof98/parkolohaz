@@ -27,9 +27,9 @@
       //if(sikeres_reg == 1)
       //nev, email, cim, szuletes, telefon, jelszo1, jelszo2
         if (request.getParameter("nev") != null && 
-			   request.getParameter("nev") != null) {
+			   request.getParameter("email") != null) {
                 if (!(request.getParameter("nev").equals("")) &&
-			!(request.getParameter("nev").equals(""))) {
+			!(request.getParameter("email").equals(""))) {
                 String nev = request.getParameter("nev");
                 String email = request.getParameter("email");
                 String cim = request.getParameter("cim");
@@ -46,7 +46,7 @@
                    vanehiba = "";
                    javax.servlet.http.Cookie cookie3 = new javax.servlet.http.Cookie("email", email);
                         response.addCookie(cookie3);
-                        javax.servlet.http.Cookie cookie2 = new javax.servlet.http.Cookie("jelszo", jelszo);
+                        javax.servlet.http.Cookie cookie2 = new javax.servlet.http.Cookie("jelszo", jelszo1);
                         response.addCookie(cookie2);
                 %>
                 <script>

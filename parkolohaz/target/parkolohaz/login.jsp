@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Parkolóház - Bejelentkezés</title>
-    <link rel="stylesheet" href="./res/login_style.css">
+    <link rel="stylesheet" href="res/login_style.css">  
     <%@ page import="java.util.List" %>
     <%@ page import="com.luv2code.jsp.*" %>
 </head>
@@ -17,7 +17,6 @@
 			for (int i = 0; i < cookies.length; i++) {
 				if(cookies[i].getName().equals("email") && cookies[i].getValue() != ""){
 					oke = 1;
-					
 				}
 			}
 		}
@@ -34,13 +33,17 @@
                 String email = request.getParameter("email");
                 String jelszo = request.getParameter("jelszo");
                 if(com.luv2code.jsp.FunUtils.Login(email, jelszo) == 1){ %>
-                        Sikeres bejelentkezés! <br> Átírányítás a főoldalra...
                         <% javax.servlet.http.Cookie cookie3 = new javax.servlet.http.Cookie("email", email);
                         response.addCookie(cookie3);
                         javax.servlet.http.Cookie cookie2 = new javax.servlet.http.Cookie("jelszo", jelszo);
                         response.addCookie(cookie2);
-                        bej = "Sikeres bejelentkezés";
-                        }else{
+                        bej = "Sikeres bejelentkezés"; %>
+                        <script>
+                        setTimeout(function() {
+                            document.location = "index.jsp";
+                        }, 1000);
+                      </script>
+                        <% }else{
                             bej = "Sikertelen bejelentkezés";
                         }
     %>
@@ -53,10 +56,10 @@
         <h1>Bejelentkezés</h1>
         <p id="bej"><% out.println(bej); %></p>
             <form action="login.jsp" method="POST">
-                <p>Felhasználónév:</p>
-                <input type=text name="nev" placeholder="Add meg a felhasználód">
+                <p>E-mail:</p>
+                <input type=text name="email" placeholder="Add meg az e-mail címedet!">
                 <p>Jelszó:</p>
-                <input type="password" name="jelszo" placeholder="Add meg a jelszavad"><br>
+                <input type="password" name="jelszo" placeholder="Add meg az jelszavadat!"><br>
                 <input type="submit" name="submit" value="Bejelentkezés"><br>
                 <a href="">Elfelejtetted a jelszavad?</a><br>
                 <a href="register.jsp">Itt tudsz regisztrálni, ha még nem vagy tag.</a>
