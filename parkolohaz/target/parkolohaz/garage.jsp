@@ -15,7 +15,7 @@
             <ul class="navlinks">
                 <li><a href="garage.jsp">Garázs</a></li>
                 <li><a href="#">Történet</a></li>
-                <li><a href="login.html">Kijelentkezés</a></li>
+                <li><a href="kijelentkezes.jsp">Kijelentkezés</a></li>
             </ul>
         </nav>
         
@@ -48,7 +48,7 @@
                 </div>
                 </div>
                 <h3><%=nev%></h3>
-                <a class="pl1" href="#"><button>Foglalás</button></a>
+                <a href="/rent.jsp" class="pl1" href="#"><button>Foglalás</button></a>
             </form>
         </div>
         <% }} %>

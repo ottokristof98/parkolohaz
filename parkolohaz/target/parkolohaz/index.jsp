@@ -21,13 +21,9 @@
 			for (int i = 0; i < cookies.length; i++) {
 				if(cookies[i].getName().equals("email") && cookies[i].getValue() != ""){
 					oke = 1;
-					out.println(cookies[i].getName());
+					
 				}
-				out.println(" n: "+cookies[i].getName());
-				out.println(" j: "+cookies[i].getValue() + oke);
-
 			}
-	
 		}
     	 if(oke == 1){ %>
 			//Bejelentkezett oldal
