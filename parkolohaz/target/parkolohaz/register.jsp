@@ -9,7 +9,9 @@
 </head>
 <body>
 <div id="box">
-      <% String vanehiba = "";
+      <% 
+          String vanehiba = "";
+          String nincshiba = "";
           Cookie[] cookies = request.getCookies();
 		      Cookie cookie = null;
 		int oke = 0;
@@ -39,12 +41,26 @@
                   s[0] = nev; s[1] = email; s[2] = cim; s[3] = szuletes; s[4] = telefon;
                   s[5] = jelszo1; s[6] = jelszo2;
                  vanehiba = com.luv2code.jsp.FunUtils.Regisztracio(nev, email, cim, szuletes, telefon, jelszo1, jelszo2);
-                 
+                 if(vanehiba.equals("Sikeres regisztráció!")){
+                   nincshiba = vanehiba;
+                   vanehiba = "";
+                   javax.servlet.http.Cookie cookie3 = new javax.servlet.http.Cookie("email", email);
+                        response.addCookie(cookie3);
+                        javax.servlet.http.Cookie cookie2 = new javax.servlet.http.Cookie("jelszo", jelszo);
+                        response.addCookie(cookie2);
+                %>
+                <script>
+                        setTimeout(function() {
+                            document.location = "index.jsp";
+                        }, 1000);
+                      </script>
+                <%   
+                 }else{
+                   nincshiba = "";
+                 }
                 
                 
       %>
-
-      <h1>OKÉÉÉÉÉ</h1>
       <%}else{
         vanehiba = "Töltsd ki az összes mezőt rendesen!";
       }
@@ -54,7 +70,7 @@
         <img src="res/avatar.png" class="avatar">
         <h1>Regisztráció</h1>
         <p id="vanehiba"><% out.println(vanehiba); %></p>
-        
+        <p id="nincshiba"><% out.println(nincshiba); %></p>
             <form name="myForm" action="register.jsp" method="POST" onsubmit="return validateForm()">
                 <p>Név:</p>
                 <input type=text name="nev" placeholder="Add meg a Nevedet!">

@@ -6,7 +6,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,27 +120,28 @@ public class FunUtils{
         String v = "";
         
         if(e == 0){
-            if(nev.length() < 5 || email. length() < 5 || lakcim.length() < 5 || szuletes.length() < 5 || telefon.length() < 5 || jelszo1.length() < 5 || !jelszo1.equals(jelszo2)){
+            if(nev.length() < 5 || email. length() < 5 || lakcim.length() < 5 || szuletes.length() < 5 || telefon.length() != 9 || jelszo1.length() < 5 || !jelszo1.equals(jelszo2)){
                 
                 if(jelszo1.equals(jelszo2)){ v = "0Nem egyezik a két jelszó (" + jelszo1 + ") (" + jelszo2 + ")";}
-                else{ v = "0Nins kitöltve rendesen az összes mező..";}
+                else{ v = "Nins kitöltve rendesen az összes mező..";}
             }else{
                 //update
                 Connection con = get_data();
                 Statement stmt = con.createStatement();
                 LocalDate d = LocalDate.parse(szuletes);
-                
-                int w = stmt.executeUpdate("INSERT INTO felhasznalo " + "(nev, email, jelszo, lakcim, szuletes, telefonszam) " + "VALUES ('"+nev+"', '"+email+"', '"+jelszo1+"', '"+lakcim+"', '"+d+"', '"+telefon+"');");
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
+                LocalDateTime now = LocalDateTime.now();
+                int w = stmt.executeUpdate("INSERT INTO felhasznalo " + "(nev, email, jelszo, lakcim, szuletes, telefonszam, reg_datum) " + "VALUES ('"+nev+"', '"+email+"', '"+jelszo1+"', '"+lakcim+"', '"+d+"', '"+telefon+"', '"+dtf.format(now)+"');");
                 if(w == 0) v = "Sikertelen regisztráció!";
                 else v = "Sikeres regisztráció!";
             } 
         }else{
-            if(nev.length() < 5 || email. length() < 5 || lakcim.length() < 5 || szuletes.length() < 5 || telefon.length() < 5 || jelszo1.length() < 5 || jelszo1 != jelszo2){
-                if(jelszo1 != jelszo2) v = "1Nem egyezik a két jelszó";
-                else v = "1Nins kitöltve rendesen az összes mező..";
+            if(nev.length() < 5 || email. length() < 5 || lakcim.length() < 5 || szuletes.length() < 5 || telefon.length() < 5 || jelszo1.length() < 5 || !jelszo1.equals(jelszo2)){
+                if(jelszo1.equals(jelszo2)) v = "Nem egyezik a két jelszó";
+                else v = "Nincs kitöltve rendesen az összes mező..";
             }else{
                 //van már ilyen felhasználónév vagy jelszó
-                v = "Van már ilyen felhasználónév vagy jelszó..";
+                v = "Az adott E-mail már regisztrálva van!";
             }
         }
         return v;

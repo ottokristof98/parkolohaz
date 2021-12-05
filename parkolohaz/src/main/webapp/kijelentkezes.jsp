@@ -19,8 +19,6 @@
 					szam = 1;
 					out.println(cookies[i].getName());
 				}
-				out.println(" n: "+cookies[i].getName());
-				out.println(" j: "+cookies[i].getValue() + szam);
 
 			}
         if(szam==1){
@@ -28,24 +26,32 @@
             response.addCookie(cookie3);
             javax.servlet.http.Cookie cookie2 = new javax.servlet.http.Cookie("jelszo", null);
             response.addCookie(cookie2);
-        
+            
         %>
         <h1>Sikeres kijelentkezés!!</h1>
+         <script>
+                        setTimeout(function() {
+                            document.location = "index.jsp";
+                        }, 1000);
+                      </script>
         <%
         szam = 0;
         for (int i = 0; i < cookies.length; i++) {
             if(cookies[i].getName().equals("email") && cookies[i].getValue() != null){
                 szam = 1;
-                out.println(cookies[i].getName());
-            }
+                
+            } 
             
-            out.println(" n: "+cookies[i].getName());
-            out.println(" j: "+cookies[i].getValue() + szam);
+            
 
         }%>
         <% }
         }else{%>
-            
+            <script>
+                        setTimeout(function() {
+                            document.location = "index.jsp";
+                        }, 1000);
+                      </script>
         <% }
         
         

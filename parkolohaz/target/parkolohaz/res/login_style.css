@@ -91,3 +91,10 @@ a:hover
 {
     color: #235A72;
 }
+#bej{
+    color: rgb(29, 204, 29);
+    width: 100%;
+    background-color: rgb(21, 105, 46);
+    padding-top: 2px;
+    padding-left: 2px;
+}

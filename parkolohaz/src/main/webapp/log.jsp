@@ -14,25 +14,25 @@
         
         
         
-            if (request.getParameter("nev") != null && 
-			   request.getParameter("nev") != null) {
-                if (!(request.getParameter("nev").equals("")) &&
-			!(request.getParameter("nev").equals(""))) {
-                String nev = request.getParameter("nev");
+            if (request.getParameter("email") != null && 
+			    request.getParameter("jelszo") != null) {
+                if (!(request.getParameter("email").equals("")) &&
+			!(request.getParameter("jelszo").equals(""))) {
+                String email = request.getParameter("email");
                 String jelszo = request.getParameter("jelszo");
                 
-
+            
                 %>
     
        
                 <% 
-                    if(com.luv2code.jsp.FunUtils.Login(nev, jelszo) == 1){ %>
+                    if(com.luv2code.jsp.FunUtils.Login(email, jelszo) == 1){ %>
                         Sikeres bejelentkezés! <br> Átírányítás a főoldalra...
-                        <% javax.servlet.http.Cookie cookie3 = new javax.servlet.http.Cookie("email", nev);
+                        <% javax.servlet.http.Cookie cookie3 = new javax.servlet.http.Cookie("email", email);
                         response.addCookie(cookie3);
                         javax.servlet.http.Cookie cookie2 = new javax.servlet.http.Cookie("jelszo", jelszo);
                         response.addCookie(cookie2);
-                        out.println(com.luv2code.jsp.FunUtils.Login("",""));
+                        
                         
                         Cookie[] cookies = request.getCookies();
                         Cookie cookie = null;
@@ -47,7 +47,7 @@
                         %>
                 <% }else{ %>
                     Rossz felhasználónév vagy jelszó! Próbálkozzon újra!!!!!!!
-                    out.println(com.luv2code.jsp.FunUtils.Login("",""));
+
                     <script>
                         setTimeout(function() {
                             document.location = "login.html";
