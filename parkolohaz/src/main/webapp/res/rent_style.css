@@ -8,6 +8,10 @@ body
     background-position: center;
     font-family: sans-serif;
     color: #fff;
+    background-image: url("parkolo3.jpg") ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 header li, a, button {
     font-family: sans-serif;
@@ -60,7 +64,7 @@ button:hover {
 }
 .kitolto form
 {
-    padding-top: 100px;
+    margin-top: 100px;
     padding-bottom: 50px;
     margin-left: 30%;
     width: 40%;
@@ -83,3 +87,4 @@ button:hover {
 }
 button:hover {
     background-color: rgba(29, 131, 72, 0.8);
+}

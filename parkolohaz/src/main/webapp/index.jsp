@@ -27,7 +27,7 @@
     	 if(oke == 1){ %>
 			 <header>
         <img src="res/parkhub.png">
-        <a class="foglalas" href="#"><button><a href="rent.jsp">Foglalás</a></button></a>
+        <a class="foglalas" href="#"><button><a href="rent.html">Foglalás</a></button></a>
         <nav>
             <ul class="navlinks">
                 <li><a href="garage.jsp">Garázs</a></li>
@@ -48,13 +48,7 @@
 			<div class="indexgomb"><a href="register.jsp">Regisztráció</a></div>
 			</div>
 		<% }
-		int parkolo = com.luv2code.jsp.FunUtils.Parkolo("","").size();
-        
-        
-        
-        for (int i = 0; i < parkolo; i++) {
-			int idparkolo = Integer.parseInt(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[0]);
-		}
+		
 		%>
 		
 		

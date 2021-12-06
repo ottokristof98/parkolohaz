@@ -12,22 +12,23 @@
 		Cookie[] cookies = request.getCookies();
 		Cookie cookie = null;
 		int oke = 0;
+        String email = "";
 		if (cookies != null) {
 			for (int i = 0; i < cookies.length; i++) {
 				if(cookies[i].getName().equals("email") && cookies[i].getValue() != ""){
 					oke = 1;
-					
+					//email = cookie[i].getValue();
 				}
 			}
 		}
     	 if(oke == 1){%>
     <header>
         <img src="res/parkhub.png">
-        <a class="foglalas" href="#"><button><a href="rent.html">Foglalás</a></button></a>
+        <a class="foglalas" href="#"><a href="rent.jsp">Foglalás</a></a>
         <nav>
             <ul class="navlinks">
-                <li><a href="garage.jsp">Garázs</a></li>
-                <li><a href="#">Történet</a></li>
+                <li><button><a href="garage.html">Garázs</a></button></li>
+                <li><a href="tortenet.html">Történet</a></li>
                 <li><a href="kijelentkezes.jsp">Kijelentkezés</a></li>
             </ul>
         </nav>
@@ -36,39 +37,33 @@
 
     <div class="blocks">
         <%
-        int parkolo = com.luv2code.jsp.FunUtils.Parkolo("","").size();
+
         
-        
+          int parkolo = com.luv2code.jsp.FunUtils.Parkolo("","").size();
         if(parkolo > 0){
-        for (int i = 0; i < parkolo; i++) {
-        int idparkolo = Integer.parseInt(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[0]);
-        String cim = (com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[1]);
-        String nev = (com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[2]);
-        int osszhely = Integer.parseInt(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[3]);
-        double percdij = Double.parseDouble(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[4]);
-        double extra_percdij = Double.parseDouble(com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[5]);
-        String kep = (com.luv2code.jsp.FunUtils.Parkolo("","").get(i)[6]);
+            for(Parkolo p :  com.luv2code.jsp.FunUtils.Parkolo("","")){
+           
         %>
         <div class="block1">
             <form>
                 <div class="kepdiv">
-                    <img class="kepimg" src="<%=kep%>">
+                    <img class="kepimg" src="<%=p.getKep()%>">
                     <div class="kepoverlay">
                         <div class="leiras1">Férőhelyek száma:</div>
                     <p class="leiras2">
-                        <%=osszhely%>
+                        <%=p.getOsszhely()%>
                         <br>
                         Szabad helyek: 150
                     </p>
                 </div>
                 </div>
-                <h3><%=nev%></h3>
+                <h3><%=p.getNev()%></h3>
                 <a href="/rent.jsp" class="pl1" href="#"><button>Foglalás</button></a>
             </form>
         </div>
         <% }}else{
             out.println("Jelenleg nincs egy parkoló sem.");
-        } %>
+        }  %>
     </div>
     <%}else{ %>
     <script>
